@@ -87,12 +87,10 @@ if(require.main == module) {
         .option('-u, --url <target_url>', 'URL to Target')
         .parse(process.argv);
     if(program.url == undefined){
-      console.log("doFIlE")
       var checkJson = checkHtmlFile(program.file, program.checks);
       var outJson = JSON.stringify(checkJson, null, 4);
       console.log(outJson); 
     }else{
-      console.log('doURL')
       checkURLFile(program.url,program.checks);
     }
 } else {
